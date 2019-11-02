@@ -1,6 +1,6 @@
-# photoshy
+# Rosalina (Client)
 
-> The easy way to transfert your medias
+> Rosalina est une interface chat faite avec Electron, VueJS et NodeJS pour expérimenter des technos
 
 #### Build Setup
 
