@@ -75,19 +75,19 @@ export default {
     }
   },
   created () {
-	// On se co
+    // On se co
     socket = io('wss://rosalina-server.herokuapp.com/')
   },
   mounted () {
-	// Images aléatoires
+    // Images aléatoires
     var images = [
       'https://canary.discordapp.com/assets/14c037b7102f18b2d2ccf065a52bb595.jpg'
     ]
 
     $('#send').attr('disabled')
 
-	$('#container').append('<style>#container, .acceptContainer:before {background: url(' + images[Math.floor(Math.random() * images.length)] + ') center fixed }')
-	// Animation
+    $('#container').append('<style>#container, .acceptContainer:before {background: url(' + images[Math.floor(Math.random() * images.length)] + ') center fixed }')
+    // Animation
     setTimeout(function () {
       $('.acceptContainer').transition({
         height: '431.5px'
@@ -100,14 +100,14 @@ export default {
       }, 500)
     }, 500)
 
-	// Petit hack
+    // Petit hack
     var app = this
 
     socket.on('connect', function () {
       $('#send').attr('disabled', null)
     })
 
-	// Update de la vue à chaque msg
+    // Update de la vue à chaque msg
     socket.on('message', function (message) {
       app.messages.push(message)
       // this needs to be done AFTER vue updates the page!!
